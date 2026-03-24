@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>uᴎme — Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assests/css/unme-base.css">
+  <link rel="stylesheet" href="assests/css/product.css">
+</head>
+<body>
+
+<!-- ════════ NAVBAR ════════ -->
+<nav class="navbar">
+  <a href="Homepage.html" class="nav-logo">u<span>ᴎ</span>me</a>
+  <ul class="nav-links">
+    <li><a href="Productpage.html" class="active">Product</a></li>
+    <li><a href="AboutUspage.html">About</a></li>
+    <li><a href="Features.html">Feature</a></li>
+    <li><a href="Pricepage.html">Price</a></li>
+    <li><a href="#footer">Support</a></li>
+  </ul>
+  <a href="#" class="btn-login">Log In</a>
+</nav>
+
+<!-- ════════ SIDEBAR ════════ -->
+<aside class="sidebar">
+  <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+  <nav class="sidebar-nav">
+    <a href="#" class="sidebar-item"><i class="fas fa-user"></i><span>User</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-paper-plane"></i><span>Messages</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-chart-bar"></i><span>Analytics</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-folder"></i><span>Files</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-shopping-cart"></i><span>Orders</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-heart"></i><span>Saved</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-cog"></i><span>Settings</span></a>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="theme-toggle" id="themeToggle">
+      <i class="fas fa-moon" id="themeIcon"></i><span>Theme</span>
+    </button>
+    <div class="sidebar-profile">
+      <img src="https://ui-avatars.com/api/?name=Shikhar&background=6366f1&color=fff" alt="profile">
+      <div><div class="profile-name">Shikhar</div><div class="profile-role">Developer</div></div>
+    </div>
+  </div>
+</aside>
+
+<!-- ════════ MAIN ════════ -->
+<main class="main-content">
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner product-banner">
+    <div class="page-banner-grid"></div>
+    <div class="prod-banner-glow"></div>
+    <div class="prod-banner-inner">
+      <div class="anim-1">
+        <span class="section-pill">Premium Collection</span>
+        <h1>Our <em>Products</em></h1>
+        <p>Curated tools, templates, and AI-powered digital resources built for modern teams and creators.</p>
+        <div class="banner-actions anim-2">
+          <a href="Pricepage.html" class="btn-primary">View Pricing</a>
+          <a href="#products" class="btn-ghost">Browse All →</a>
+        </div>
+      </div>
+      <div class="banner-stats anim-3">
+        <div class="bstat"><strong>6</strong><span>Products</span></div>
+        <div class="bstat"><strong>200+</strong><span>Components</span></div>
+        <div class="bstat"><strong>40k</strong><span>Users</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" id="products">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web App</button>
+    <button class="filter-btn" data-filter="mobile">Mobile</button>
+    <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+    <button class="filter-btn" data-filter="portfolio">Portfolio</button>
+    <button class="filter-btn" data-filter="dev">Developer</button>
+    <button class="filter-btn" data-filter="saas">SaaS</button>
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <section class="products-section">
+    <div class="products-grid">
+
+      <!-- Card 1 -->
+      <div class="prod-card anim-1" data-cat="web">
+        <div class="prod-card-img">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&auto=format&fit=crop&q=80" alt="Dashboard Pro">
+          <div class="prod-img-overlay">
+            <a href="#" class="overlay-btn">Live Demo</a>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-meta">
+            <span class="prod-tag">Web App</span>
+            <span class="prod-price">₹999<small>/mo</small></span>
+          </div>
+          <h3>Dashboard Pro</h3>
+          <p>A fully-featured analytics dashboard with real-time data, custom widgets, and team collaboration built in.</p>
+          <ul class="prod-features">
+            <li><i class="fas fa-check"></i>Real-time analytics</li>
+            <li><i class="fas fa-check"></i>Custom widget builder</li>
+            <li><i class="fas fa-check"></i>Team workspaces</li>
+          </ul>
+          <a href="Pricepage.html" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;">View Pricing</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="prod-card anim-2" data-cat="mobile">
+        <div class="prod-card-img">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&auto=format&fit=crop&q=80" alt="Flow Mobile Kit">
+          <div class="prod-img-overlay">
+            <a href="#" class="overlay-btn">Preview</a>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-meta">
+            <span class="prod-tag">Mobile</span>
+            <span class="prod-price">₹1,499<small>/mo</small></span>
+          </div>
+          <h3>Flow Mobile Kit</h3>
+          <p>A production-ready mobile UI kit with 200+ components, dark mode support, and full Figma source files.</p>
+          <ul class="prod-features">
+            <li><i class="fas fa-check"></i>200+ UI components</li>
+            <li><i class="fas fa-check"></i>Dark &amp; light mode</li>
+            <li><i class="fas fa-check"></i>Figma source included</li>
+          </ul>
+          <a href="Pricepage.html" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;">View Pricing</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="prod-card anim-3" data-cat="ecommerce">
+        <div class="prod-card-img">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&auto=format&fit=crop&q=80" alt="Store Engine">
+          <div class="prod-img-overlay">
+            <a href="#" class="overlay-btn">Live Demo</a>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-meta">
+            <span class="prod-tag">E-Commerce</span>
+            <span class="prod-price">₹1,999<small>/mo</small></span>
+          </div>
+          <h3>Store Engine</h3>
+          <p>Launch your online store in minutes. Includes inventory, checkout, and payment processing out of the box.</p>
+          <ul class="prod-features">
+            <li><i class="fas fa-check"></i>One-click checkout</li>
+            <li><i class="fas fa-check"></i>Payment integration</li>
+            <li><i class="fas fa-check"></i>Inventory tracking</li>
+          </ul>
+          <a href="Pricepage.html" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;">View Pricing</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="prod-card anim-1" data-cat="portfolio">
+        <div class="prod-card-img">
+          <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?w=700&auto=format&fit=crop&q=80" alt="Folio Template">
+          <div class="prod-img-overlay">
+            <a href="#" class="overlay-btn">Preview</a>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-meta">
+            <span class="prod-tag">Portfolio</span>
+            <span class="prod-price">₹499<small>/mo</small></span>
+          </div>
+          <h3>Folio Template</h3>
+          <p>A minimal, stunning portfolio template perfect for designers, photographers, and creative professionals.</p>
+          <ul class="prod-features">
+            <li><i class="fas fa-check"></i>Scroll animations</li>
+            <li><i class="fas fa-check"></i>Project showcase grid</li>
+            <li><i class="fas fa-check"></i>Contact form ready</li>
+          </ul>
+          <a href="Pricepage.html" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;">View Pricing</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="prod-card anim-2 featured-prod" data-cat="dev">
+        <div class="prod-badge-featured">★ Most Loved</div>
+        <div class="prod-card-img">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&auto=format&fit=crop&q=80" alt="CodeLens Plugin">
+          <div class="prod-img-overlay">
+            <a href="#" class="overlay-btn">Install</a>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-meta">
+            <span class="prod-tag">Developer Tool</span>
+            <span class="prod-price">₹799<small>/mo</small></span>
+          </div>
+          <h3>CodeLens Plugin</h3>
+          <p>An intelligent code assistant compatible with VS Code and JetBrains. Refactor, document, and debug faster.</p>
+          <ul class="prod-features">
+            <li><i class="fas fa-check"></i>AI-powered suggestions</li>
+            <li><i class="fas fa-check"></i>VS Code + JetBrains</li>
+            <li><i class="fas fa-check"></i>Offline mode</li>
+          </ul>
+          <a href="Pricepage.html" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;">View Pricing</a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="prod-card anim-3" data-cat="saas">
+        <div class="prod-card-img">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&auto=format&fit=crop&q=80" alt="LaunchPad">
+          <div class="prod-img-overlay">
+            <a href="#" class="overlay-btn">Explore</a>
+          </div>
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-meta">
+            <span class="prod-tag">SaaS Starter</span>
+            <span class="prod-price">₹2,499<small>/mo</small></span>
+          </div>
+          <h3>LaunchPad Boilerplate</h3>
+          <p>A complete SaaS starter with auth, billing, team management, and a polished UI — ship from day one.</p>
+          <ul class="prod-features">
+            <li><i class="fas fa-check"></i>Auth + billing built in</li>
+            <li><i class="fas fa-check"></i>Team management</li>
+            <li><i class="fas fa-check"></i>Production-ready</li>
+          </ul>
+          <a href="Pricepage.html" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;">View Pricing</a>
+        </div>
+      </div>
+
+    </div><!-- /.products-grid -->
+  </section>
+
+  <!-- CTA STRIP -->
+  <div class="prod-cta-strip">
+    <div class="cta-glow-strip"></div>
+    <div class="cta-strip-content">
+      <h2>Can't find what you need?</h2>
+      <p>We build custom solutions too. Let's talk about your project.</p>
+      <a href="#footer" class="btn-primary">Talk to Us</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top">
+      <span>Get connected with us on social networks:</span>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">u<span>ᴎ</span>me</div>
+          <p class="footer-tagline">Building AI-powered experiences for the modern web.</p>
+          <div class="footer-support">
+            <i class="fas fa-envelope"></i>
+            <div><small>Support</small><a href="mailto:contactunme@gmail.com">contactunme@gmail.com</a></div>
+          </div>
+        </div>
+        <div>
+          <h6>Products</h6>
+          <ul class="footer-links">
+            <li><a href="#">AI Agent</a></li><li><a href="#">Code Gen</a></li>
+            <li><a href="#">Dashboard</a></li><li><a href="#">API</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Company</h6>
+          <ul class="footer-links">
+            <li><a href="Pricepage.html">Pricing</a></li>
+            <li><a href="AboutUspage.html">About</a></li>
+            <li><a href="Productpage.html">Products</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Contact</h6>
+          <p class="footer-info"><i class="fas fa-home"></i>Pune, MH 10012, IND</p>
+          <p class="footer-info"><i class="fas fa-phone"></i>+91 234 567 88</p>
+          <p class="footer-info"><i class="fas fa-envelope"></i>contactunme@gmail.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 uᴎme. All rights reserved.</div>
+  </footer>
+
+</main>
+
+<script src="assests/script/unme-script.js"></script>
+<script>
+  // Filter logic
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.prod-card').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.cat === filter) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

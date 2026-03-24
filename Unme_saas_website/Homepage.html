@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>uᴎme — Build your imagination</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assests/css/unme-style.css">
+</head>
+<body>
+
+<!-- ════════ NAVBAR ════════ -->
+<nav class="navbar" id="navbar">
+  <a href="Homepage.html" class="nav-logo">u<span>ᴎ</span>me</a>
+
+  <ul class="nav-links">
+    <li><a href="Productpage.html">Product</a></li>
+    <li><a href="AboutUspage.html">About</a></li>
+    <li><a href="Features.html">Feature</a></li>
+    <li><a href="Pricepage.html">Price</a></li>
+    <li><a href="#footer">Support</a></li>
+  </ul>
+
+  <div class="nav-right-actions">
+    <a href="#" class="btn-login">Log In</a>
+  </div>
+</nav>
+
+<!-- ════════ SIDEBAR ════════ -->
+<aside class="sidebar" id="sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <nav class="sidebar-nav">
+    <a href="#" class="sidebar-item" title="User"><i class="fas fa-user"></i><span>User</span></a>
+    <a href="#" class="sidebar-item" title="Dashboard"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+    <a href="#" class="sidebar-item" title="Messages"><i class="fas fa-paper-plane"></i><span>Messages</span></a>
+    <a href="#" class="sidebar-item" title="Analytics"><i class="fas fa-chart-bar"></i><span>Analytics</span></a>
+    <a href="#" class="sidebar-item" title="Files"><i class="fas fa-folder"></i><span>Files</span></a>
+    <a href="#" class="sidebar-item" title="Orders"><i class="fas fa-shopping-cart"></i><span>Orders</span></a>
+    <a href="#" class="sidebar-item" title="Saved"><i class="fas fa-heart"></i><span>Saved</span></a>
+    <a href="#" class="sidebar-item" title="Settings"><i class="fas fa-cog"></i><span>Settings</span></a>
+  </nav>
+
+  <div class="sidebar-bottom">
+    <!-- DARK/LIGHT TOGGLE -->
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+      <i class="fas fa-moon" id="themeIcon"></i>
+      <span>Theme</span>
+    </button>
+
+    <div class="sidebar-profile">
+      <img src="https://ui-avatars.com/api/?name=Shikhar&background=6366f1&color=fff" alt="profile">
+      <div>
+        <div class="profile-name">Shikhar</div>
+        <div class="profile-role">Developer</div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- ════════ MAIN ════════ -->
+<main class="main-content">
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">✦ Introducing uᴎme AI Agent</div>
+        <h1 class="hero-title">u<span class="logo-flip">ᴎ</span>me</h1>
+        <p class="hero-sub">AI you can build your imagination and your product, from a robot to complex software with a personal AI agent.</p>
+        <div class="hero-actions">
+          <a href="Productpage.html" class="btn-primary">Start Building</a>
+          <a href="Features.html" class="btn-ghost">See Features →</a>
+        </div>
+        <div class="hero-trust">
+          <span>Trusted by 40k+ developers</span>
+          <div class="avatars">
+            <img src="https://ui-avatars.com/api/?name=A&background=f59e0b&color=fff" alt="">
+            <img src="https://ui-avatars.com/api/?name=B&background=10b981&color=fff" alt="">
+            <img src="https://ui-avatars.com/api/?name=C&background=6366f1&color=fff" alt="">
+            <img src="https://ui-avatars.com/api/?name=D&background=ef4444&color=fff" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <div class="hero-img-card card-back">
+            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&auto=format&fit=crop&q=80" alt="AI">
+          </div>
+          <div class="hero-img-card card-front">
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&auto=format&fit=crop&q=80" alt="Robot">
+          </div>
+        </div>
+        <div class="hero-float-stat stat-1">
+          <div class="stat-dot"></div>
+          <span>120+ products shipped</span>
+        </div>
+        <div class="hero-float-stat stat-2">
+          <i class="fas fa-bolt"></i>
+          <span>Real-time AI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LOGO CLOUD ── -->
+  <section class="logo-cloud">
+    <p class="logo-cloud-label">Built with the best tools in the industry</p>
+    <div class="logos-track">
+      <div class="logos-inner">
+        <div class="logo-chip"><i class="fab fa-python"></i> Python</div>
+        <div class="logo-chip"><i class="fab fa-js"></i> JavaScript</div>
+        <div class="logo-chip"><span class="ts-icon">TS</span> TypeScript</div>
+        <div class="logo-chip"><span class="tw-icon">tw</span> Tailwind</div>
+        <div class="logo-chip"><span class="go-icon">Go</span> Golang</div>
+        <div class="logo-chip"><span class="miro-icon">M</span> Miro</div>
+        <div class="logo-chip"><span class="claude-icon">C</span> Claude</div>
+        <div class="logo-chip"><span class="gpt-icon">G</span> ChatGPT</div>
+        <!-- duplicate for seamless loop -->
+        <div class="logo-chip"><i class="fab fa-python"></i> Python</div>
+        <div class="logo-chip"><i class="fab fa-js"></i> JavaScript</div>
+        <div class="logo-chip"><span class="ts-icon">TS</span> TypeScript</div>
+        <div class="logo-chip"><span class="tw-icon">tw</span> Tailwind</div>
+        <div class="logo-chip"><span class="go-icon">Go</span> Golang</div>
+        <div class="logo-chip"><span class="miro-icon">M</span> Miro</div>
+        <div class="logo-chip"><span class="claude-icon">C</span> Claude</div>
+        <div class="logo-chip"><span class="gpt-icon">G</span> ChatGPT</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURE HIGHLIGHT ── -->
+  <section class="feature-highlight">
+    <div class="fh-inner">
+      <div class="fh-text">
+        <span class="section-pill">AI-Powered</span>
+        <h2>Build anything you<br>can <em>imagine</em></h2>
+        <p>AI you can build your imagination and your product, from a robot to complex software with a personal AI agent.</p>
+        <a href="Features.html" class="btn-primary" style="display:inline-flex;margin-top:28px;">Explore Features</a>
+      </div>
+      <div class="fh-cards">
+        <div class="fh-mini-card">
+          <i class="fas fa-robot"></i>
+          <div>
+            <strong>AI Agent</strong>
+            <span>Personal coding companion</span>
+          </div>
+        </div>
+        <div class="fh-mini-card">
+          <i class="fas fa-code"></i>
+          <div>
+            <strong>Code Generation</strong>
+            <span>From idea to production</span>
+          </div>
+        </div>
+        <div class="fh-mini-card">
+          <i class="fas fa-bolt"></i>
+          <div>
+            <strong>Fast Deploy</strong>
+            <span>Ship in minutes</span>
+          </div>
+        </div>
+        <div class="fh-mini-card">
+          <i class="fas fa-shield-alt"></i>
+          <div>
+            <strong>Secure</strong>
+            <span>Enterprise-grade safety</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DYNAMIC USER CARDS ── -->
+  <section class="users-section">
+    <div class="section-header">
+      <span class="section-pill">Live Data</span>
+      <h2>Team Members</h2>
+      <p>Fetched live from our API — meet the people using uᴎme.</p>
+    </div>
+    <div class="user-cards-grid" id="userCardsGrid">
+      <!-- Cards injected by JS -->
+      <div class="card-skeleton"></div>
+      <div class="card-skeleton"></div>
+      <div class="card-skeleton"></div>
+      <div class="card-skeleton"></div>
+      <div class="card-skeleton"></div>
+    </div>
+  </section>
+
+  <!-- ── USER TABLE ── -->
+  <section class="table-section">
+    <div class="section-header">
+      <span class="section-pill">Dashboard</span>
+      <h2>User Directory</h2>
+      <p>Complete user records from the API.</p>
+    </div>
+    <div class="table-wrapper">
+      <table class="user-table" id="userTable">
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Username</th><th>Email</th>
+            <th>Phone</th><th>Website</th><th>Street</th><th>City</th><th>Zipcode</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr><td colspan="9" class="table-loading">Loading data…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <nav class="pagination-wrap"><ul class="pagination" id="pagination"></ul></nav>
+  </section>
+
+  <!-- ── SHOWCASE ── -->
+  <section class="showcase-section">
+    <div class="showcase-header">
+      <span class="section-pill">Coming Next</span>
+      <h2>Launching soon</h2>
+      <p>The next generation of AI-powered tools is almost here.</p>
+    </div>
+    <div class="showcase-grid">
+      <div class="showcase-card big">
+        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80" alt="AI Robot">
+        <div class="showcase-overlay">
+          <span>AI Robotics</span>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&auto=format&fit=crop&q=80" alt="Coding">
+        <div class="showcase-overlay"><span>Dev Tools</span></div>
+      </div>
+      <div class="showcase-card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80" alt="Technology">
+        <div class="showcase-overlay"><span>Technology</span></div>
+      </div>
+      <div class="showcase-card">
+        <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=600&auto=format&fit=crop&q=80" alt="Futuristic">
+        <div class="showcase-overlay"><span>Future</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ── -->
+  <section class="cta-band">
+    <div class="cta-glow"></div>
+    <div class="cta-content">
+      <h2>Your next project<br>starts <em>now.</em></h2>
+      <p>No hidden costs, no surprises. Jump straight to pricing or browse the full product range.</p>
+      <div class="cta-btns">
+        <a href="Productpage.html" class="btn-primary">Browse Products</a>
+        <a href="Pricepage.html" class="btn-ghost">See Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer id="footer">
+    <div class="footer-top">
+      <span>Get connected with us on social networks:</span>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">u<span>ᴎ</span>me</div>
+          <p class="footer-tagline">Building beautiful AI-powered experiences for the modern web.</p>
+          <div class="footer-support">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <small>Support</small>
+              <a href="mailto:contactunme@gmail.com">contactunme@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h6>Products</h6>
+          <ul class="footer-links">
+            <li><a href="#">AI Agent</a></li><li><a href="#">Code Gen</a></li>
+            <li><a href="#">Dashboard</a></li><li><a href="#">API</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Company</h6>
+          <ul class="footer-links">
+            <li><a href="Pricepage.html">Pricing</a></li>
+            <li><a href="AboutUspage.html">About</a></li>
+            <li><a href="Productpage.html">Products</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Contact</h6>
+          <p class="footer-info"><i class="fas fa-home"></i>Pune, MH 10012, IND</p>
+          <p class="footer-info"><i class="fas fa-phone"></i>+91 234 567 88</p>
+          <p class="footer-info"><i class="fas fa-envelope"></i>contactunme@gmail.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 uᴎme. All rights reserved.</div>
+  </footer>
+
+</main>
+
+<script src="assests/script/unme-script.js"></script>
+</body>
+</html>

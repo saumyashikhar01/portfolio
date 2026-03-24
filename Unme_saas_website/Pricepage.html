@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>uᴎme — Pricing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assests/css/unme-base.css">
+  <link rel="stylesheet" href="assests/css/price.css">
+</head>
+<body>
+
+<!-- ════════ NAVBAR ════════ -->
+<nav class="navbar">
+  <a href="Homepage.html" class="nav-logo">u<span>ᴎ</span>me</a>
+  <ul class="nav-links">
+    <li><a href="Productpage.html">Product</a></li>
+    <li><a href="AboutUspage.html">About</a></li>
+    <li><a href="Features.html">Feature</a></li>
+    <li><a href="Pricepage.html" class="active">Price</a></li>
+    <li><a href="#footer">Support</a></li>
+  </ul>
+  <a href="#" class="btn-login">Log In</a>
+</nav>
+
+<!-- ════════ SIDEBAR ════════ -->
+<aside class="sidebar">
+  <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+  <nav class="sidebar-nav">
+    <a href="#" class="sidebar-item"><i class="fas fa-user"></i><span>User</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-paper-plane"></i><span>Messages</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-chart-bar"></i><span>Analytics</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-folder"></i><span>Files</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-shopping-cart"></i><span>Orders</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-heart"></i><span>Saved</span></a>
+    <a href="#" class="sidebar-item"><i class="fas fa-cog"></i><span>Settings</span></a>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="theme-toggle" id="themeToggle">
+      <i class="fas fa-moon" id="themeIcon"></i><span>Theme</span>
+    </button>
+    <div class="sidebar-profile">
+      <img src="https://ui-avatars.com/api/?name=Shikhar&background=6366f1&color=fff" alt="profile">
+      <div><div class="profile-name">Shikhar</div><div class="profile-role">Developer</div></div>
+    </div>
+  </div>
+</aside>
+
+<!-- ════════ MAIN ════════ -->
+<main class="main-content">
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner price-banner">
+    <div class="page-banner-grid"></div>
+    <div class="price-banner-glow"></div>
+    <div class="price-banner-content anim-1">
+      <span class="section-pill">Simple Pricing</span>
+      <h1>Honest, <em>transparent</em> pricing</h1>
+      <p>No hidden fees. No surprises. Start free and scale when you're ready.</p>
+    </div>
+    <!-- Toggle monthly / yearly -->
+    <div class="billing-toggle anim-2">
+      <span id="toggleMonthly" class="tog-label active">Monthly</span>
+      <button class="tog-btn" id="billingToggle" aria-label="Toggle billing cycle">
+        <span class="tog-knob"></span>
+      </button>
+      <span id="toggleYearly" class="tog-label">Yearly <em class="save-badge">Save 20%</em></span>
+    </div>
+  </div>
+
+  <!-- PRICING CARDS -->
+  <section class="pricing-section">
+    <div class="pricing-grid">
+
+      <!-- STARTER -->
+      <div class="price-card anim-1">
+        <div class="pc-top">
+          <div class="pc-name">Starter</div>
+          <div class="pc-price-wrap">
+            <div class="pc-price">
+              <span class="pc-curr">₹</span>
+              <span class="pc-amount" data-monthly="0" data-yearly="0">0</span>
+            </div>
+            <div class="pc-period">/month · forever free</div>
+          </div>
+          <p class="pc-desc">Perfect for individuals, side projects, and anyone just getting started.</p>
+          <a href="#" class="btn-ghost" style="width:100%;justify-content:center;">Get Started Free</a>
+        </div>
+        <hr class="pc-divider">
+        <ul class="pc-features">
+          <li class="yes"><i class="fas fa-check"></i>3 active projects</li>
+          <li class="yes"><i class="fas fa-check"></i>10 deployments / day</li>
+          <li class="yes"><i class="fas fa-check"></i>1 GB storage</li>
+          <li class="yes"><i class="fas fa-check"></i>Community support</li>
+          <li class="no"><i class="fas fa-times"></i>Custom domain</li>
+          <li class="no"><i class="fas fa-times"></i>Team collaboration</li>
+          <li class="no"><i class="fas fa-times"></i>Priority support</li>
+        </ul>
+      </div>
+
+      <!-- PRO (featured) -->
+      <div class="price-card featured anim-2">
+        <div class="pc-badge">Most Popular</div>
+        <div class="pc-top">
+          <div class="pc-name">Pro</div>
+          <div class="pc-price-wrap">
+            <div class="pc-price">
+              <span class="pc-curr">₹</span>
+              <span class="pc-amount" data-monthly="999" data-yearly="799">999</span>
+            </div>
+            <div class="pc-period">/month · billed monthly</div>
+          </div>
+          <p class="pc-desc">For growing teams that need speed, reliability, and collaboration tools.</p>
+          <a href="#" class="btn-primary" style="width:100%;justify-content:center;">Start Free Trial</a>
+        </div>
+        <hr class="pc-divider">
+        <ul class="pc-features">
+          <li class="yes"><i class="fas fa-check"></i>Unlimited projects</li>
+          <li class="yes"><i class="fas fa-check"></i>Unlimited deployments</li>
+          <li class="yes"><i class="fas fa-check"></i>50 GB storage</li>
+          <li class="yes"><i class="fas fa-check"></i>Priority support (24 h)</li>
+          <li class="yes"><i class="fas fa-check"></i>Custom domain</li>
+          <li class="yes"><i class="fas fa-check"></i>Team collaboration (5 seats)</li>
+          <li class="yes"><i class="fas fa-check"></i>Advanced analytics</li>
+        </ul>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="price-card anim-3">
+        <div class="pc-top">
+          <div class="pc-name">Enterprise</div>
+          <div class="pc-price-wrap">
+            <div class="pc-price">
+              <span class="pc-amount" style="font-size:2rem">Custom</span>
+            </div>
+            <div class="pc-period">tailored to your needs</div>
+          </div>
+          <p class="pc-desc">For large organisations needing compliance, dedicated infra, and unlimited scale.</p>
+          <a href="#footer" class="btn-ghost" style="width:100%;justify-content:center;">Talk to Sales</a>
+        </div>
+        <hr class="pc-divider">
+        <ul class="pc-features">
+          <li class="yes"><i class="fas fa-check"></i>Everything in Pro</li>
+          <li class="yes"><i class="fas fa-check"></i>Unlimited seats</li>
+          <li class="yes"><i class="fas fa-check"></i>Unlimited storage</li>
+          <li class="yes"><i class="fas fa-check"></i>Dedicated SLA</li>
+          <li class="yes"><i class="fas fa-check"></i>SSO / SAML login</li>
+          <li class="yes"><i class="fas fa-check"></i>SOC 2 audit logs</li>
+          <li class="yes"><i class="fas fa-check"></i>Custom integrations</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="price-note">All prices include GST · 14-day free trial on paid plans ·
+      <a href="#footer">Contact us</a> for custom quotes
+    </p>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="compare-section">
+    <div class="section-header">
+      <span class="section-pill">Compare</span>
+      <h2>Full feature breakdown</h2>
+      <p>See exactly what's included in every plan.</p>
+    </div>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Starter</th>
+            <th class="col-pro">Pro</th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Projects</td><td>3</td><td class="col-pro">Unlimited</td><td>Unlimited</td></tr>
+          <tr><td>Storage</td><td>1 GB</td><td class="col-pro">50 GB</td><td>Unlimited</td></tr>
+          <tr><td>Team seats</td><td>1</td><td class="col-pro">5</td><td>Unlimited</td></tr>
+          <tr><td>Custom domain</td><td><i class="fas fa-times no-icon"></i></td><td class="col-pro"><i class="fas fa-check yes-icon"></i></td><td><i class="fas fa-check yes-icon"></i></td></tr>
+          <tr><td>Analytics</td><td>Basic</td><td class="col-pro">Advanced</td><td>Custom</td></tr>
+          <tr><td>Support</td><td>Community</td><td class="col-pro">24h Priority</td><td>Dedicated SLA</td></tr>
+          <tr><td>SSO / SAML</td><td><i class="fas fa-times no-icon"></i></td><td class="col-pro"><i class="fas fa-times no-icon"></i></td><td><i class="fas fa-check yes-icon"></i></td></tr>
+          <tr><td>Audit logs</td><td><i class="fas fa-times no-icon"></i></td><td class="col-pro"><i class="fas fa-times no-icon"></i></td><td><i class="fas fa-check yes-icon"></i></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-header">
+      <span class="section-pill">FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Can I switch plans anytime?</h4>
+        <p>Yes. Upgrade or downgrade at any time. Changes take effect at the next billing cycle.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is there a free trial?</h4>
+        <p>All paid plans come with a 14-day free trial. No credit card required to start.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What payment methods do you accept?</h4>
+        <p>We accept all major credit/debit cards, UPI, and net banking via Razorpay.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you offer student/NGO discounts?</h4>
+        <p>Yes — reach out to contactunme@gmail.com with proof of eligibility for a 40% discount.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top">
+      <span>Get connected with us on social networks:</span>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">u<span>ᴎ</span>me</div>
+          <p class="footer-tagline">Building AI-powered experiences for the modern web.</p>
+          <div class="footer-support">
+            <i class="fas fa-envelope"></i>
+            <div><small>Support</small><a href="mailto:contactunme@gmail.com">contactunme@gmail.com</a></div>
+          </div>
+        </div>
+        <div>
+          <h6>Products</h6>
+          <ul class="footer-links">
+            <li><a href="#">AI Agent</a></li><li><a href="#">Code Gen</a></li>
+            <li><a href="#">Dashboard</a></li><li><a href="#">API</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Company</h6>
+          <ul class="footer-links">
+            <li><a href="Pricepage.html">Pricing</a></li>
+            <li><a href="AboutUspage.html">About</a></li>
+            <li><a href="Productpage.html">Products</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6>Contact</h6>
+          <p class="footer-info"><i class="fas fa-home"></i>Pune, MH 10012, IND</p>
+          <p class="footer-info"><i class="fas fa-phone"></i>+91 234 567 88</p>
+          <p class="footer-info"><i class="fas fa-envelope"></i>contactunme@gmail.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 uᴎme. All rights reserved.</div>
+  </footer>
+
+</main>
+
+<script src="assests/script/unme-script.js"></script>
+<script>
+  // Billing toggle
+  const toggle = document.getElementById('billingToggle');
+  const knob   = toggle?.querySelector('.tog-knob');
+  const lblM   = document.getElementById('toggleMonthly');
+  const lblY   = document.getElementById('toggleYearly');
+  let yearly   = false;
+
+  toggle?.addEventListener('click', () => {
+    yearly = !yearly;
+    toggle.classList.toggle('on', yearly);
+    lblM.classList.toggle('active', !yearly);
+    lblY.classList.toggle('active', yearly);
+
+    document.querySelectorAll('.pc-amount[data-monthly]').forEach(el => {
+      const v = yearly ? el.dataset.yearly : el.dataset.monthly;
+      el.textContent = v;
+    });
+    document.querySelectorAll('.pc-period').forEach((el, i) => {
+      if (i === 1) el.textContent = yearly ? '/month · billed yearly' : '/month · billed monthly';
+    });
+  });
+</script>
+</body>
+</html>
