@@ -1,0 +1,8 @@
+[build]
+  # This tells Netlify to use the saas_website folder as the site root
+  publish = "saas_website"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
