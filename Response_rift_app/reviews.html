@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews — Response Rift</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body data-endpoint="reviews" data-perpage="8">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-brand">Response<span>Rift</span></div>
+  <ul class="navbar-links">
+    <li><a href="index.html"               >Users</a></li>
+    <li><a href="posts.html"               >Posts</a></li>
+    <li><a href="photos.html"              >Photos</a></li>
+    <li><a href="reviews.html" class="active">Reviews</a></li>
+    <li><a href="products.html"            >Products</a></li>
+  </ul>
+</nav>
+
+<main class="main-content">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-dots"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow"><span class="eyebrow-dot"></span> Response Rift API</div>
+      <h1 class="hero-title">Reviews</h1>
+      <p class="hero-sub">
+        Live review data from <code>responserift.dev/api/reviews</code> — reviewer names, comments, star ratings, and dates.
+      </p>
+      <div class="hero-actions">
+        <a href="#main-section" class="btn-primary"><i class="fas fa-star"></i> Browse Reviews</a>
+        <a href="index.html" class="btn-ghost"><i class="fas fa-arrow-left"></i> Back to Users</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUS BAR -->
+  <div class="status-bar">
+    <div class="status-bar-inner">
+      <div class="status-item"><i class="fas fa-plug"></i><span>Endpoint: <strong id="endpointTag">reviews</strong></span></div>
+      <div class="status-item"><i class="fas fa-star"></i><span>Total: <strong id="totalCount">—</strong></span></div>
+      <div class="status-item"><i class="fas fa-file-alt"></i><span>Page: <strong id="pageIndicator">—</strong></span></div>
+      <div class="status-dot-wrap"><span class="status-live-dot"></span><span>Live</span></div>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <section class="table-section" id="main-section">
+    <div class="section-header">
+      <span class="section-pill">Live Data</span>
+      <h2>Reviews Table</h2>
+      <p>Paginated review records fetched live from the API.</p>
+    </div>
+
+    <div class="table-toolbar">
+      <div class="search-wrap">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search reviews…">
+      </div>
+      <div class="page-info" id="pageInfo">Loading…</div>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Reviewer</th>
+            <th>Email</th>
+            <th>Comment</th>
+            <th>Rating</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr><td colspan="6" class="table-loading"><div class="spinner"></div> Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <nav class="pagination-wrap">
+      <button class="pag-btn" id="prevBtn" disabled><i class="fas fa-chevron-left"></i> Prev</button>
+      <div class="pag-pages" id="pagPages"></div>
+      <button class="pag-btn" id="nextBtn" disabled>Next <i class="fas fa-chevron-right"></i></button>
+    </nav>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Response<span>Rift</span></div>
+      <p class="footer-tagline">Live data, beautiful interfaces.</p>
+      <div class="footer-links-row">
+        <a href="index.html">Users</a>
+        <a href="posts.html">Posts</a>
+        <a href="photos.html">Photos</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="products.html">Products</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-bottom">© 2026 ResponseRift · contactunme@gmail.com</div>
+    </div>
+  </footer>
+
+</main>
+
+<script src="assets/script/script.js"></script>
+</body>
+</html>
