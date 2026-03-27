@@ -1,0 +1,805 @@
+
+   
+:root {
+  --white:        #ffffff;
+  --bg:           #f9fafb;
+  --bg-2:         #f3f4f6;
+  --surface:      #ffffff;
+  --border:       #e5e7eb;
+  --border-2:     #d1d5db;
+
+  --text:         #111827;
+  --text-2:       #374151;
+  --text-muted:   #6b7280;
+  --text-light:   #9ca3af;
+
+  --accent:       #6366f1;
+  --accent-h:     #4f46e5;
+  --accent-soft:  rgba(99,102,241,0.08);
+  --accent-ring:  rgba(99,102,241,0.25);
+
+  --green:        #10b981;
+  --amber:        #f59e0b;
+  --red:          #ef4444;
+
+  --radius:       12px;
+  --radius-sm:    8px;
+  --shadow-sm:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:    0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg:    0 12px 40px rgba(0,0,0,0.10);
+}
+ 
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+
+    .page-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 28px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .page-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .page-logo i { color: var(--accent); }
+
+    /* Nav links inside header (users page has multi-page nav) */
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .header-nav a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s;
+    }
+    .header-nav a:hover  { background: var(--surface2); color: var(--text); }
+    .header-nav a.active { background: var(--accent-glow); color: var(--accent); }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .endpoint-badge {
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid rgba(124,111,247,0.35);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+
+    .hero {
+      padding: 52px 28px 36px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 560px;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+
+    /* Anchor-scroll buttons below hero text */
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-scroll {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .btn-scroll.primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-scroll.primary:hover { background: #6b5ef0; transform: translateY(-1px); color: #fff; text-decoration: none; }
+    .btn-scroll.ghost {
+      background: var(--surface2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-scroll.ghost:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    /* ════════════════════════════════════════════════
+       ── BLOCK 5: TOOLBAR ────────────────────────────
+       Same classes as posts.html (.toolbar,
+       .search-wrap, .stat-chip).
+       ID #searchInput used by script.js — unchanged.
+    ════════════════════════════════════════════════ */
+    .toolbar {
+      max-width: 960px;
+      margin: 0 auto 28px;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .search-wrap {
+      flex: 1;
+      min-width: 200px;
+      position: relative;
+    }
+    .search-wrap i {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+    #searchInput {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: var(--radius-sm);
+      padding: 9px 12px 9px 36px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    #searchInput:focus { border-color: var(--accent); }
+    #searchInput::placeholder { color: var(--muted); }
+
+    .stat-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .stat-chip strong { color: var(--text); }
+
+    /* ════════════════════════════════════════════════
+       ── BLOCK 6: SECTION WRAPPER ────────────────────
+       #main-section  → script.js scrolls here on goTo()
+       #cards-section → anchor scroll from hero button
+       #table-section → anchor scroll from hero button
+    ════════════════════════════════════════════════ */
+    #main-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Section heading shared by both cards + table */
+    .section-label {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .section-heading {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .section-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    /* ════════════════════════════════════════════════
+       ── BLOCK 7: USER CARDS ─────────────────────────
+       NEW styles specific to users page.
+       ID #cardsGrid — must match script.js exactly.
+       Class .user-card rendered by renderUsers().
+    ════════════════════════════════════════════════ */
+    #cardsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    /* ── Card shell ── */
+    .user-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      opacity: 0;
+      animation: fadeUp 0.42s ease forwards;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .user-card:hover {
+      border-color: rgba(124,111,247,0.45);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.28);
+    }
+
+    /* ── Header row: avatar + name + chevron ── */
+    .uc-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 16px 14px;
+    }
+    .uc-avatar img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: block;
+    }
+    .uc-top-text { flex: 1; min-width: 0; }
+    .uc-name {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .uc-username {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 1px;
+    }
+
+    /* Animated chevron — rotates when expanded */
+    .uc-chevron {
+      color: var(--muted);
+      font-size: 0.78rem;
+      flex-shrink: 0;
+      transition: transform 0.28s ease, color 0.2s;
+    }
+    .user-card.expanded .uc-chevron {
+      transform: rotate(180deg);
+      color: var(--accent);
+    }
+
+    /* ── Collapsible detail panel ── */
+    .uc-info {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+      border-top: 0px solid transparent;
+    }
+    .user-card.expanded .uc-info {
+      max-height: 220px;
+      padding: 0 16px 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Each info row inside the panel ── */
+    .uc-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      padding: 6px 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .uc-row:last-child { border-bottom: none; }
+    .uc-row i {
+      width: 14px;
+      text-align: center;
+      color: var(--accent);
+      font-size: 0.78rem;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .uc-row span {
+      word-break: break-all;
+      line-height: 1.45;
+    }
+
+    /* ── Coloured accent bar at card bottom ── */
+    .user-card::after {
+      content: "";
+      display: block;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #a78bfa);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .user-card.expanded::after,
+    .user-card:hover::after { opacity: 1; }
+
+    /* ── Table name chip (.chip-table-user) ────────────
+       Rendered by renderUsers() in the Name column.
+       Clicking triggers fetchById via event delegation.
+       Inherits .click-user from script.js delegation.
+    ────────────────────────────────────────────────── */
+    .chip-table-user {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 2px 0;
+      text-align: left;
+      transition: color 0.18s;
+    }
+    .chip-table-user i {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+    .chip-table-user:hover { color: var(--accent); }
+    .chip-table-user:hover i { opacity: 0.8; }
+
+    /* ════════════════════════════════════════════════
+       ── BLOCK 8: TABLE SECTION ──────────────────────
+       ID #tableBody — must match script.js exactly.
+       All class names are new (no overlap with posts).
+    ════════════════════════════════════════════════ */
+    .table-section {
+      max-width: 960px;
+      margin: 0 auto 64px;
+      padding: 0 28px;
+    }
+
+    /* Scrollable wrapper so table never breaks layout */
+    .table-scroll {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    /* ── Table itself ── */
+    .user-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      min-width: 640px; /* force horizontal scroll on mobile */
+    }
+
+    /* ── Head ── */
+    .user-table thead tr {
+      background: var(--surface2);
+    }
+    .user-table thead th {
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    /* ID column smaller */
+    .user-table thead th:first-child { width: 48px; }
+
+    /* ── Body rows ── */
+    .user-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .user-table tbody tr:last-child { border-bottom: none; }
+    .user-table tbody tr:hover { background: var(--surface2); }
+
+    .user-table td {
+      padding: 11px 14px;
+      vertical-align: middle;
+      color: var(--text);
+    }
+
+    /* Specific column utilities */
+    .td-id {
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+    .td-name { font-weight: 500; }
+
+    /* Username badge — purple pill */
+    .badge-user {
+      display: inline-block;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid rgba(124,111,247,0.3);
+      border-radius: 20px;
+      padding: 2px 9px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Email / website links */
+    .link-accent { color: var(--accent); }
+    .link-accent:hover { text-decoration: underline; }
+
+    /* Loading + error row */
+    .table-loading {
+      text-align: center;
+      padding: 36px 12px;
+      color: var(--muted);
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* ════════════════════════════════════════════════
+       ── BLOCK 9: SKELETON LOADER ────────────────────
+       Identical to posts.html — same class name.
+    ════════════════════════════════════════════════ */
+    .card-skeleton {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      height: 74px;       /* matches collapsed card height */
+      animation: shimmer 1.4s infinite linear;
+      background-image: linear-gradient(
+        90deg,
+        var(--surface)  0%,
+        var(--surface2) 50%,
+        var(--surface)  100%
+      );
+      background-size: 400% 100%;
+    }
+    @keyframes shimmer {
+      0%   { background-position: 100% 0; }
+      100% { background-position: -100% 0; }
+    }
+
+    /* Spinner — identical to posts.html */
+    .spinner {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .error-msg {
+      grid-column: 1 / -1;
+      color: var(--red);
+      padding: 24px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ════════════════════════════════════════════════
+       ── BLOCK 10: PAGINATION ────────────────────────
+       Same classes as posts.html (.pagination,
+       .pag-controls, .pag-btn, .pag-num, .pag-dots).
+       IDs #prevBtn, #nextBtn, #pagPages, #pageInfo,
+       #pageIndicator — all match script.js exactly.
+    ════════════════════════════════════════════════ */
+    .pagination {
+      max-width: 960px;
+      margin: 0 auto 40px;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    #pageInfo {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .pag-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pag-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: var(--radius-sm);
+      padding: 7px 14px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: border-color 0.2s, background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pag-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+    .pag-btn:not(:disabled):hover {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+    }
+    #pagPages { display: flex; align-items: center; gap: 4px; }
+    .pag-num {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: var(--radius-sm);
+      width: 34px;
+      height: 34px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.18s;
+    }
+    .pag-num.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      font-weight: 600;
+    }
+    .pag-num:not(.active):hover { border-color: var(--accent); color: var(--text); }
+    .pag-dots { color: var(--muted); font-size: 0.85rem; padding: 0 4px; }
+    #pageIndicator { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+
+    /* ════════════════════════════════════════════════
+       ── BLOCK 11: MODAL ─────────────────────────────
+       Injected by script.js — same CSS as posts.html.
+       Must be present for the modal to render correctly
+       when a .click-user element is clicked.
+    ════════════════════════════════════════════════ */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+    .modal-backdrop.modal-open { opacity: 1; pointer-events: auto; }
+
+    .modal-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 520px;
+      max-height: 88vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.55);
+      transform: translateY(16px) scale(0.97);
+      transition: transform 0.22s ease;
+    }
+    .modal-backdrop.modal-open .modal-box { transform: translateY(0) scale(1); }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px 14px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      z-index: 1;
+      border-radius: 16px 16px 0 0;
+    }
+    .modal-title { font-size: 1rem; font-weight: 600; color: var(--text); }
+    .modal-close-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: background 0.18s, color 0.18s;
+    }
+    .modal-close-btn:hover { background: var(--red); color: #fff; border-color: var(--red); }
+    .modal-body { padding: 22px; }
+
+    .modal-loading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.875rem;
+      padding: 16px 0;
+    }
+    .modal-error {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      color: var(--red);
+      padding: 24px 0;
+      text-align: center;
+    }
+    .modal-error i { font-size: 2rem; }
+    .modal-error p { font-size: 0.85rem; }
+
+    .md-user {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .md-avatar img { width: 64px; height: 64px; border-radius: 50%; }
+    .md-name { font-size: 1.05rem; font-weight: 600; color: var(--text); }
+    .md-username { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+
+    .md-grid { display: flex; flex-direction: column; gap: 12px; }
+    .md-field {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.845rem;
+    }
+    .md-label {
+      color: var(--muted);
+      min-width: 90px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-top: 1px;
+    }
+    .md-label i { width: 14px; text-align: center; color: var(--accent); }
+    .md-value { color: var(--text); word-break: break-word; }
+
+    .md-post-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 10px; line-height: 1.45; }
+    .md-post-body  { font-size: 0.85rem; color: var(--muted); line-height: 1.75; font-weight: 300; margin-bottom: 14px; }
+    .md-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .md-prod-img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      background: var(--surface2);
+    }
+
+    /* ════════════════════════════════════════════════
+       ── BLOCK 12: STAR RATINGS ──────────────────────
+       Identical to posts.html.
+    ════════════════════════════════════════════════ */
+    .stars { display: inline-flex; gap: 2px; }
+    .star-full  { color: var(--amber); font-size: 0.8rem; }
+    .star-half  { color: var(--amber); font-size: 0.8rem; }
+    .star-empty { color: var(--border); font-size: 0.8rem; }
+    .rating-num { font-size: 0.78rem; color: var(--muted); }
+
+    /* ════════════════════════════════════════════════
+       ── BLOCK 13: DIVIDER BETWEEN CARDS & TABLE ─────
+    ════════════════════════════════════════════════ */
+    .section-divider {
+      max-width: 960px;
+      margin: 44px auto 36px;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .section-divider span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* ════════════════════════════════════════════════
+       ── BLOCK 14: ENTER ANIMATION ───────────────────
+       Identical to posts.html.
+    ════════════════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ════════════════════════════════════════════════
+       ── BLOCK 15: RESPONSIVE ────────────────────────
+    ════════════════════════════════════════════════ */
+    @media (max-width: 640px) {
+      .hero, .toolbar, #main-section, .pagination,
+      .table-section, .section-divider { padding-left: 16px; padding-right: 16px; }
+      .page-header { padding: 0 16px; }
+      .header-nav  { display: none; }   /* hidden on mobile */
+      #cardsGrid   { grid-template-columns: 1fr; }
+      .modal-box   { border-radius: 12px; }
+      .md-label    { min-width: 70px; }
+    }
+    @media (max-width: 520px) {
+      .hero-actions { flex-direction: column; }
+      .btn-scroll   { width: 100%; justify-content: center; }
+    }

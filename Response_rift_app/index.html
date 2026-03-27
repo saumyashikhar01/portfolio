@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Users — Response Rift</title>
+  <title> Response Rift api</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -14,9 +14,9 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <div class="navbar-brand">Response<span>Rift</span></div>
+  <div class="navbar-brand">Response<span>rift</span></div>
   <ul class="navbar-links">
-    <li><a href="index.html"    class="active">Users</a></li>
+    <li><a href="users.html"    class="active">Users</a></li>
     <li><a href="posts.html"             >Posts</a></li>
     <li><a href="photos.html"            >Photos</a></li>
     <li><a href="reviews.html"           >Reviews</a></li>
@@ -33,10 +33,11 @@
     <div class="blob blob-2"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow"><span class="eyebrow-dot"></span> Response Rift API</div>
-      <h1 class="hero-title">Users</h1>
+      <h1 class="hero-title">pages with api data in navbar</h1>
       <p class="hero-sub">
         Live user data from <code>responserift.dev/api/users</code> — cards with expand-on-click and a full paginated table.
       </p>
+      
       <div class="hero-actions">
         <a href="#cards-section" class="btn-primary"><i class="fas fa-id-card"></i> Cards</a>
         <a href="#table-section" class="btn-ghost">Table <i class="fas fa-arrow-down"></i></a>
@@ -63,56 +64,14 @@
     </div>
   </div>
 
-  <!-- CARDS -->
-  <section class="cards-section" id="cards-section">
-    <div class="section-header">
-      <span class="section-pill">Live Data</span>
-      <h2>User Cards</h2>
-      <p>Click any card to expand full details.</p>
-    </div>
-    <div class="cards-grid cols-5" id="cardsGrid">
-      <div class="card-skeleton"></div>
-      <div class="card-skeleton"></div>
-      <div class="card-skeleton"></div>
-      <div class="card-skeleton"></div>
-      <div class="card-skeleton"></div>
-    </div>
+  
+    
+    <!-- populated by script.js → renderPosts() -->
+  </div>
+</section>
   </section>
 
-  <!-- TABLE -->
-  <section class="table-section" id="table-section">
-    <div id="main-section"></div>
-    <div class="section-header">
-      <span class="section-pill">Dashboard</span>
-      <h2>User Directory</h2>
-      <p>Full paginated table.</p>
-    </div>
-    <div class="table-toolbar">
-      <div class="search-wrap">
-        <i class="fas fa-search"></i>
-        <input type="text" id="searchInput" placeholder="Search current page…">
-      </div>
-      <div class="page-info" id="pageInfo">Loading…</div>
-    </div>
-    <div class="table-wrapper">
-      <table class="user-table">
-        <thead>
-          <tr>
-            <th>#</th><th>Name</th><th>Username</th>
-            <th>Email</th><th>Phone</th><th>Website</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <tr><td colspan="6" class="table-loading"><div class="spinner"></div> Loading…</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <nav class="pagination-wrap">
-      <button class="pag-btn" id="prevBtn" disabled><i class="fas fa-chevron-left"></i> Prev</button>
-      <div class="pag-pages" id="pagPages"></div>
-      <button class="pag-btn" id="nextBtn" disabled>Next <i class="fas fa-chevron-right"></i></button>
-    </nav>
-  </section>
+
 
   <!-- FOOTER -->
   <footer>
@@ -125,6 +84,7 @@
         <a href="photos.html">Photos</a>
         <a href="reviews.html">Reviews</a>
         <a href="products.html">Products</a>
+        
       </div>
       <div class="footer-socials">
         <a href="#"><i class="fab fa-github"></i></a>
