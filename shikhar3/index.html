@@ -1,11 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COSMOSX — Universe Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
-    
+
+  <!-- ════════ NAVBAR ════════ -->
+  <nav class="navbar">
+    <div class="nav-logo">COSMOS<span>X</span></div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#bento-section">Explore</a></li>
+      <li><a href="#scatter-section">Gallery</a></li>
+      <li><a href="#">Data</a></li>
+    </ul>
+    <button class="btn-cta">GET STARTED</button>
+  </nav>
+
+  <!-- ════════ HERO ════════ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">NASA OPEN DATA • REAL-TIME UNIVERSE</p>
+      <h1 class="hero-title">Explore the<br><span>Universe</span></h1>
+      <p class="hero-sub">Discover stunning imagery from NASA's archives — black holes, nebulae, missions and beyond.</p>
+      <div class="hero-actions">
+        <button class="btn-cta large">START JOURNEY</button>
+        <a href="#bento-section" class="btn-ghost">View Gallery ↓</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <span>360°</span>
+      <p>Cosmos</p>
+    </div>
+  </section>
+
+  <!-- ════════ BENTO CARD GRID SECTION ════════ -->
+  <section id="bento-section" class="bento-section">
+    <div class="section-header">
+      <p class="section-tag">/ MISSIONS & DEEP SPACE</p>
+      <h2 class="section-title">Universe in Focus</h2>
+    </div>
+    <div id="bento-container" class="bento-container">
+      <!-- Rendered via JS -->
+    </div>
+  </section>
+
+  <!-- ════════ SCATTERED CARD SECTION (like reference image) ════════ -->
+  <section id="scatter-section" class="scatter-section">
+    <div class="scatter-bg-overlay"></div>
+    <div class="scatter-center">
+      <p class="scatter-eyebrow">A Design Service For</p>
+      <h2 class="scatter-title">Visual<br>Identity</h2>
+      <span class="scatter-tag">ArtisticProjects</span>
+    </div>
+    <div id="scatter-container" class="scatter-container">
+      <!-- Rendered via JS -->
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h2>COSMOS<span>X</span></h2>
+        <p>Building immersive cosmic experiences using real-time NASA data and modern web technologies.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Galaxies</a></li>
+          <li><a href="#">Planets</a></li>
+          <li><a href="#">Stars</a></li>
+          <li><a href="#">Nebulae</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">NASA API</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Open Source</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 COSMOSX. Powered by NASA Open Data.</div>
+  </footer>
+
+  <script src="src/script/script.js"></script>
 </body>
 </html>
