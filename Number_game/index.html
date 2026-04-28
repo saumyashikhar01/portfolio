@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIRCUIT // Number Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/scr/style/index.css">
+</head>
+<body>
+
+<!-- Custom cursor dot -->
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- Parallax background -->
+<div class="parallax-bg">
+  <div class="parallax-layer" id="parallaxLayer"></div>
+  <div class="parallax-overlay"></div>
+</div>
+
+<!-- Scanlines overlay -->
+<div class="scanlines"></div>
+
+<!-- Main site wrapper -->
+<div class="site-wrapper">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-schematic-left"></div>
+    <div class="navbar-schematic"></div>
+
+    <a href="#" class="navbar-logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">NUMBER<span>//NAMA</span></div>
+    </a>
+
+    <div class="navbar-status">
+      <div class="status-item">
+        <div class="status-dot"></div>
+        <span>SYS ONLINE</span>
+      </div>
+      <div class="status-item">
+        <div class="status-dot gold"></div>
+        <span>NODE ACTIVE</span>
+      </div>
+      <div class="status-item">
+        <div class="status-dot red"></div>
+        <span>ALERT 0</span>
+      </div>
+      <div class="navbar-clock" id="clock">00:00:00</div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT AREA -->
+  <div class="content-area">
+
+    <!-- LEFT SETTINGS PANEL -->
+    <aside class="settings-panel">
+
+      <!-- Score Card -->
+      <div class="panel-card">
+        <div class="panel-schematic-bg"></div>
+        <div class="panel-header">
+          <div class="panel-header-icon"></div>
+          SCORE MATRIX
+        </div>
+        <div class="panel-body">
+          <div class="score-display">
+            <div class="score-num" id="scoreDisplay">0000</div>
+            <div class="score-sub">total_points</div>
+          </div>
+          <div class="setting-row">
+            <div class="setting-label">LEVEL PROGRESS <span id="levelPct">0%</span></div>
+            <div class="progress-track">
+              <div class="progress-fill" id="levelProgress" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div class="setting-label">MATCH RATE <span id="matchRate">0%</span></div>
+            <div class="progress-track">
+              <div class="progress-fill progress-fill--cyan" id="matchProgress" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions Card -->
+      <div class="panel-card">
+        <div class="panel-schematic-bg"></div>
+        <div class="panel-header">
+          <div class="panel-header-icon"></div>
+          CONTROL
+        </div>
+        <div class="panel-body">
+          <button class="action-btn" onclick="regenerateBoard()">▶ REGENERATE</button>
+          <button class="action-btn" onclick="addRow()">+ ADD ROW</button>
+          <button class="action-btn" onclick="autoMatch()">⚡ AUTO-MATCH</button>
+          <button class="action-btn danger" onclick="resetGame()">✕ RESET SYSTEM</button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN GAME WINDOW -->
+    <main class="main-window">
+      <div class="window-frame">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+
+        <div class="window-titlebar">
+          <div class="window-title">MATRIX_GRID.exe // INSTANCE_01</div>
+          <div class="window-controls">
+            <div class="wc close" onclick="resetGame()"></div>
+            <div class="wc min"></div>
+            <div class="wc max" onclick="addRow()"></div>
+          </div>
+        </div>
+
+        <div class="window-body">
+          <div id="gameBoard"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- RIGHT PANEL -->
+    <aside class="right-panel">
+
+      <!-- Session analysis card -->
+      <div class="panel-card schematic-art">
+        <div class="right-schematic"></div>
+        <img src="i1.PNG" alt="" class="schematic-art-img">
+        <div class="schematic-art-overlay">SESSION ANALYSIS</div>
+        <div class="session-timer" id="sessionTimer">SESSION: 00:00</div>
+      </div>
+
+      <!-- SYS LOG with row injector -->
+      <div class="panel-card">
+        <div class="right-schematic"></div>
+        <div class="panel-header">
+          <div class="panel-header-icon"></div>
+          SYS LOG
+        </div>
+        <div class="panel-body log-panel-body">
+
+          <!-- Row injector -->
+          <div class="row-injector">
+            <div class="row-injector-label">INJECT ROWS</div>
+            <div class="row-injector-controls">
+              <input
+                type="number"
+                id="rowCountInput"
+                class="row-count-input"
+                min="1" max="99" value="1"
+                placeholder="N"
+              >
+              <button class="row-inject-btn" onclick="injectRows()">▶ ADD</button>
+            </div>
+            <div class="row-counter">
+              <span class="row-counter-label">TOTAL ROWS</span>
+              <span class="row-counter-val" id="liveRowCount">11</span>
+            </div>
+          </div>
+
+          <div class="log-divider"></div>
+
+          <div class="log-body" id="logBody">
+            <div class="log-entry highlight"><span class="log-time">00:00</span> SYSTEM BOOT</div>
+            <div class="log-entry"><span class="log-time">00:00</span> GRID INITIALIZED</div>
+            <div class="log-entry warn"><span class="log-time">00:00</span> AWAITING INPUT</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diagnostics -->
+      <div class="panel-card">
+        <div class="right-schematic"></div>
+        <div class="panel-header">
+          <div class="panel-header-icon"></div>
+          DIAGNOSTICS
+        </div>
+        <div class="panel-body">
+          <div class="setting-row">
+            <div class="setting-label">CPU LOAD <span id="cpuVal">42%</span></div>
+            <div class="progress-track">
+              <div class="progress-fill" id="cpuBar" style="width:42%"></div>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div class="setting-label">MEM ALLOC <span id="memVal">67%</span></div>
+            <div class="progress-track">
+              <div class="progress-fill progress-fill--red" id="memBar" style="width:67%"></div>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div class="setting-label">NET SIGNAL <span id="netVal">88%</span></div>
+            <div class="progress-track">
+              <div class="progress-fill progress-fill--cyan" id="netBar" style="width:88%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- STATUS BAR -->
+  <div class="statusbar">
+    <div class="statusbar-item">NODES: <span id="sbNodes">99</span></div>
+    <div class="statusbar-item">ACTIVE: <span id="sbActive">99</span></div>
+    <div class="statusbar-item">MATCHED: <span id="sbMatched">0</span></div>
+    <div class="statusbar-item">SESSION: <span id="sbSession">00:00</span></div>
+    <div class="statusbar-right">CIRCUIT//NMX v2.4.1 // READY</div>
+  </div>
+
+</div>
+
+<script src="scr/script/script.js"></script>
+</body>
+</html>
